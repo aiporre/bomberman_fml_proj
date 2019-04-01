@@ -1,0 +1,86 @@
+INITIAL ERROR>>>> 
+
+2019-03-25 23:35:25,309 [Q_agent_wrapper] INFO: Finalize agent's training
+2019-03-25 23:35:25,631 [Q_agent_wrapper] ERROR: Error in callback function: can't pickle _thread.RLock objects
+Traceback (most recent call last):
+  File "/home/ari/bomberman_fml/agents.py", line 134, in run
+    self.code.end_of_episode(self.fake_self)
+  File "/home/ari/bomberman_fml/agent_code/Q_agent/callbacks.py", line 52, in end_of_episode
+    world.game_wrapper.complete_episode(world)
+  File "/home/ari/bomberman_fml/agent_code/Q_agent/GameWrapper.py", line 58, in complete_episode
+    self.agent.complete_episode(world)
+  File "/home/ari/bomberman_fml/agent_code/Q_agent/SchedulerAgent.py", line 187, in complete_episode
+    pickle.dump(agent, open(agent_file, "wb"))
+TypeError: can't pickle _thread.RLock objects
+2019-03-25 23:35:25,632 [Q_agent_wrapper] INFO: Round #2 finished
+2019-03-25 23:35:25,808 [Q_agent_wrapper] INFO: STARTING ROUND #3
+
+
+
+REPEATITIVE ERROR:
+
+i2019-03-25 23:35:57,010 [Q_agent_wrapper] INFO: Import agent code from "agent_code/Q_agent/callbacks.py"
+2019-03-25 23:35:58,671 [Q_agent_wrapper] INFO: Initialize agent code
+2019-03-25 23:35:58,676 [Q_agent_wrapper] INFO: STARTING ROUND #1
+2019-03-25 23:35:58,677 [Q_agent_wrapper] INFO: STARTING STEP 1
+2019-03-25 23:35:58,683 [Q_agent_wrapper] ERROR: Error in callback function: Ran out of input
+Traceback (most recent call last):
+  File "/home/ari/bomberman_fml/agents.py", line 110, in run
+    self.code.act(self.fake_self)
+  File "/home/ari/bomberman_fml/agent_code/Q_agent/callbacks.py", line 35, in act
+    world.game_wrapper = GameWrapper(world)
+  File "/home/ari/bomberman_fml/agent_code/Q_agent/GameWrapper.py", line 15, in __init__
+    self.agent = SchedulerAgent(world)
+  File "/home/ari/bomberman_fml/agent_code/Q_agent/SchedulerAgent.py", line 24, in __init__
+    self.load_agents(world, self.activations)
+  File "/home/ari/bomberman_fml/agent_code/Q_agent/SchedulerAgent.py", line 42, in load_agents
+    loaded_agent = pickle.load(open(agent_file_name, "rb"))
+EOFError: Ran out of input
+2019-03-25 23:35:58,684 [Q_agent_wrapper] INFO: Chose action WAIT after 0.007s of thinking
+2019-03-25 23:35:58,686 [Q_agent_wrapper] INFO: STARTING STEP 2
+2019-03-25 23:35:58,687 [Q_agent_wrapper] INFO: Process intermediate rewards
+2019-03-25 23:35:58,687 [Q_agent_wrapper] ERROR: Error in callback function: 'NoneType' object has no attribute 'update_reward'
+Traceback (most recent call last):
+  File "/home/ari/bomberman_fml/agents.py", line 99, in run
+    self.code.reward_update(self.fake_self)
+  File "/home/ari/bomberman_fml/agent_code/Q_agent/callbacks.py", line 47, in reward_update
+    world.game_wrapper.update_reward(world)
+AttributeError: 'NoneType' object has no attribute 'update_reward'
+2019-03-25 23:35:58,692 [Q_agent_wrapper] ERROR: Error in callback function: Ran out of input
+Traceback (most recent call last):
+  File "/home/ari/bomberman_fml/agents.py", line 110, in run
+    self.code.act(self.fake_self)
+  File "/home/ari/bomberman_fml/agent_code/Q_agent/callbacks.py", line 35, in act
+    world.game_wrapper = GameWrapper(world)
+  File "/home/ari/bomberman_fml/agent_code/Q_agent/GameWrapper.py", line 15, in __init__
+    self.agent = SchedulerAgent(world)
+  File "/home/ari/bomberman_fml/agent_code/Q_agent/SchedulerAgent.py", line 24, in __init__
+    self.load_agents(world, self.activations)
+  File "/home/ari/bomberman_fml/agent_code/Q_agent/SchedulerAgent.py", line 42, in load_agents
+    loaded_agent = pickle.load(open(agent_file_name, "rb"))
+EOFError: Ran out of input
+2019-03-25 23:35:58,694 [Q_agent_wrapper] INFO: Chose action WAIT after 0.006s of thinking
+2019-03-25 23:35:58,695 [Q_agent_wrapper] INFO: STARTING STEP 3
+2019-03-25 23:35:58,695 [Q_agent_wrapper] INFO: Process intermediate rewards
+2019-03-25 23:35:58,695 [Q_agent_wrapper] ERROR: Error in callback function: 'NoneType' object has no attribute 'update_reward'
+Traceback (most recent call last):
+  File "/home/ari/bomberman_fml/agents.py", line 99, in run
+    self.code.reward_update(self.fake_self)
+  File "/home/ari/bomberman_fml/agent_code/Q_agent/callbacks.py", line 47, in reward_update
+    world.game_wrapper.update_reward(world)
+AttributeError: 'NoneType' object has no attribute 'update_reward'
+2019-03-25 23:35:58,699 [Q_agent_wrapper] ERROR: Error in callback function: Ran out of input
+Traceback (most recent call last):
+  File "/home/ari/bomberman_fml/agents.py", line 110, in run
+    self.code.act(self.fake_self)
+  File "/home/ari/bomberman_fml/agent_code/Q_agent/callbacks.py", line 35, in act
+    world.game_wrapper = GameWrapper(world)
+  File "/home/ari/bomberman_fml/agent_code/Q_agent/GameWrapper.py", line 15, in __init__
+    self.agent = SchedulerAgent(world)
+  File "/home/ari/bomberman_fml/agent_code/Q_agent/SchedulerAgent.py", line 24, in __init__
+    self.load_agents(world, self.activations)
+  File "/home/ari/bomberman_fml/agent_code/Q_agent/SchedulerAgent.py", line 42, in load_agents
+    loaded_agent = pickle.load(open(agent_file_name, "rb"))
+EOFError: Ran out of input
+
+

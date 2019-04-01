@@ -1,0 +1,177 @@
+explorer = {
+    'dqn': True,
+    'base_algorithm':{
+        'greedy_prob' : 1.0,
+        'lr': 0.001,
+        'discount': 0.9
+    },
+    'base_agent':{
+        'td': True,
+        'td_steps': 5
+    },
+    'dql': {
+        'max_memory': 500,
+        'batch_size': 10,
+        'epochs': 1,
+        'update_step_rate': 100,
+        'model_file': 'models/dqn_model_explorer.tar',
+        'track' : None
+    },
+    'game_abstraction': {
+        'patch_size': 5
+    },
+    'network': {
+        'new_network': True,
+        'state_width': 11,
+        'state_height': 11,
+        'lr': 0.001,
+        'num_out_channels': 6,
+        'method': 'dueling_cnn'
+    },
+    'db': None # 'storage/experience_simple_agent_as_explorer_density_75.json'
+}
+coin = {
+    'dqn': True,
+    'base_algorithm':{
+        'greedy_prob' : 0.9,
+        'lr': 0.01,
+        'discount': 0.4,
+    },
+    'base_agent':{
+        'td': False,
+        'td_steps': 5
+    },
+    'dql': {
+        'max_memory': 1000,
+        'batch_size': {'external':16,'own':16},
+        'epochs': 1,
+        'update_step_rate': 100,
+        'model_file': 'models/dqn_model_coin.tar',
+<<<<<<< Updated upstream
+        'track' : None # 'positive_reward'
+=======
+        'track' : 'positive_reward'
+>>>>>>> Stashed changes
+    },
+    'game_abstraction': {
+        'patch_size': 5
+    },
+    'network': {
+        'new_network': False,
+        'state_width': 17,
+        'state_height': 17,
+        'lr': 0.01,
+        'num_out_channels': 4,
+        'method': 'dueling_cnn'
+    },
+<<<<<<< Updated upstream
+    'db': 'storage/experience_coin.json'
+=======
+    'db': 'experience_coin.json'
+>>>>>>> Stashed changes
+}
+runner = {
+    'dqn': True,
+    'base_algorithm':{
+        'greedy_prob' : 0.8,
+        'lr': 0.01,
+        'discount': 0.6
+    },
+    'base_agent':{
+        'td': False,
+        'td_steps': 5
+    },
+    'dql': {
+        'max_memory': 100,
+        'epochs': 100,
+        'update_step_rate': 3,
+        'model_file': 'models/dqn_model_runner.tar',
+        'batch_size': {'external':10,'own':10},
+        'track' : 'all'
+    },
+    'game_abstraction': {
+        'patch_size': 5
+    },
+    'network': {
+        'new_network': True,
+        'state_width': 11,
+        'state_height': 11,
+        'lr': 0.001,
+        'num_out_channels': 6,
+        'method': 'cnn'
+    },
+    'db': None  # 'experience_runner.json'
+}
+master = {
+    'dqn': True,
+    'base_algorithm':{
+        'greedy_prob' : 0.8,
+        'lr': 0.001,
+        'discount': 0.6
+    },
+    'base_agent':{
+        'td': False,
+        'td_steps': 5
+    },
+    'dql': {
+        'max_memory': 100,
+        'batch_size': 10,
+        'epochs': 100,
+        'update_step_rate': 3,
+        'model_file': 'models/dqn_model_master.tar'
+
+    },
+    'game_abstraction': {
+        'patch_size': 5
+    },
+    'network': {
+        'state_width': 11,
+        'state_height': 11,
+        'lr': 0.001,
+        'num_out_channels': 3,
+        'method': 'nn'
+    }
+}
+
+simple = {
+    'dqn': True,
+    'base_algorithm':{
+        'greedy_prob' : 1.0,
+        'lr': 0.001,
+        'discount': 0.6
+    },
+    'base_agent':{
+        'td': False,
+        'td_steps': 5
+    },
+    'dql': {
+        'max_memory': 100,
+        'batch_size': {'external':10,'own':10},
+        'epochs': 100,
+        'update_step_rate': 3,
+        'model_file': 'models/dqn_model_explorer-simple-agent.tar',
+        'track' : 'all'
+    },
+    'game_abstraction': {
+        'patch_size': 5
+    },
+    'network': {
+        'new_network': True,
+        'state_width': 11,
+        'state_height': 11,
+        'lr': 0.000001,
+        'num_out_channels': 5,
+        'method': 'dueling_cnn'
+    },
+    'db': None  # 'storage/experience_simple_agent_as_explorer.json'
+}
+
+
+greedy_annealing = {
+    'on' : True,
+    'min_prob': 0.02
+}
+
+scheduler = {
+    'agent_files': {'EXPLORE':'models/explorer_1','SEARCH_COIN': 'models/coin_searcher_1','RUN_AWAY':'models/runnner_1'}
+}
